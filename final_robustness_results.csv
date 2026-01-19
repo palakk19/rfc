@@ -1,0 +1,18 @@
+hadm_id,true_icd,original_pred,perturbed_pred,semantic_similarity
+24120244,I132,"Chronic kidney disease 5 (CKD5)
+Systolic heart failure (",ICD code: I12.0 (Hypertensive chronic kidney disease with stage,0.9915986
+23271725,56081,ICD-10 Code: K56.60 - Small bowel obstruction without,"Small bowel obstruction secondary to adhesions
+
+ICD-10 Code: K",0.9953922
+22124877,64241,"Preeclampsia, Diabetes mellitus type I, Hypothyroidism","Preeclampsia, Diabetes mellitus type I, Hypothyroidism",0.98882854
+28588783,V5811,Primary CNS lymphoma,Primary CNS lymphoma,0.9860115
+20269623,K5730,ICD-10: K57.30 Diverticular hemorrhage of,Diverticular bleed,0.99205446
+23639462,44021,ICD code: Z47.89 - Encounter for other orthopedic aftercare,ICD code: Z48.812 (Encounter for surgical aftercare following,0.9964273
+25802941,5722,Cirrhosis complicated by hepatic encephalopathy,Cirrhosis complicated by hepatic encephalopathy,0.99455786
+21758486,99682,"ICD-10: K83.0 - Cholangitis
+
+CMV","ICD-10: K83.0 - Cholangitis
+
+ICD",0.99385154
+27184985,44283,"Splenic Hematoma, Parasitemia","Splenic Hematoma, Parasitemia",0.993991
+22473394,5770,"Acute pancreatitis, Hypertriglyceridemia, Dermatomy","Acute pancreatitis, Hypertriglyceridemia, Dermatomy",0.99570274
