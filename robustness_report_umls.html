@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Robustness Report (UMLS + RxNorm)</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1400px;
+               margin: 0 auto; padding: 20px; background: #fafafa; }
+        h1 { color: #333; }
+        .summary { background: #f0f0f0; padding: 15px;
+                   border-radius: 8px; margin-bottom: 30px; }
+        .summary p { margin: 4px 0; }
+        .badge { display: inline-block; padding: 2px 8px;
+                 border-radius: 4px; font-size: 0.85em;
+                 font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🏥 Clinical Note Robustness Report</h1>
+    <p style="color:#666;">
+        Perturbations sourced from
+        <span class="badge" style="background:#4ECDC4; color:white;">
+        UMLS Metathesaurus</span> and
+        <span class="badge" style="background:#FF6B6B; color:white;">
+        RxNorm</span> — expert-curated medical synonyms.
+    </p>
+    <div class="summary">
+        <h2>Summary</h2>
+        <p><b>Total Samples:</b> 8</p>
+        <p><b>Valid for Analysis (correct baseline):</b> 8</p>
+        <p><b>Skipped (wrong baseline):</b> 0</p>
+        <p><b>ICD Drift Rate:</b> 37.5%
+           <span style="color:#888;">(valid samples only)</span></p>
+        <p><b>Avg Semantic Similarity:</b> 0.9957</p>
+        <p><b>Avg Changes Per Note:</b> 5.6</p>
+        <p><b>Perturbation Source:</b>
+           UMLS Metathesaurus + RxNorm (NLM licensed)</p>
+    </div>
+    
+        <div style="border:1px solid #ccc; margin:20px 0;
+        padding:15px; border-radius:8px;">
+            <h3 style="margin:0 0 10px 0;">
+                Patient ID: 24120244
+                <span style="background:#ccffcc;
+                padding:4px 10px; border-radius:4px;
+                font-size:0.9em;">✅ STABLE</span>
+                
+            </h3>
+            <table style="font-size:0.9em; border-collapse:collapse;
+            margin-bottom:10px;">
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Ground Truth:</b></td>
+                    <td>Hypertensive heart and chronic kidney disease with heart failure and with stage 5 chronic kidney disease, or end stage renal disease
+                    (I132 v10)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Original Prediction:</b></td>
+                    <td>I21.0 — Acute Myocardial Infarction
+                    (baseline sim: 0.8710)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Changes Made:</b></td>
+                    <td>B12 -> TNFAIP1 [UMLS] | acute dialysis -> Acute dialysis program [UMLS] | Dr. -> Human leukocyte antigen DR [UMLS] | management -> Managements, Disease [UMLS] | Cardiology -> Card [UMLS] | transferred -> Delivery [UMLS] | impaired -> Impairment [UMLS] | palpation -> Palpation - action [UMLS] | years -> year [UMLS] | breath -> Exhaled gas [UMLS] | Associated with -> Associated [UMLS] | sharp -> Sharp sensation quality [UMLS] | hypertension -> HYPERTENSIVE DISEASE [UMLS] | HPI -> History of present illness [UMLS]
+                    (14 words)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Text Similarity:</b></td>
+                    <td>0.9970</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top:10px;">
+                <div style="margin-bottom:8px; font-size:0.85em;">
+                    <span style="background:#FF6B6B; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● Original words</span>&nbsp;
+                    <span style="background:#51C878; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● UMLS/RxNorm replacements</span>
+                </div>
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <th style="width:50%; background:#e8f4f8;
+                        padding:8px; border:1px solid #ccc;">
+                        Original Text</th>
+                        <th style="width:50%; background:#fff8e8;
+                        padding:8px; border:1px solid #ccc;">
+                        Perturbed Text (UMLS/RxNorm)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">HPI</span>: female with past medical history of <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">hypertension</span>, hyperlipidemia, nephrectomy who recently emigrated from the 1 month ago, presented to ER as a referral for hyperkalemia. Patient went to establish care at office on . Labwork noted to be hyperkalemic, sent to ER for further evaluation. She does note that she was hyperkalemic <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">years</span> ago however did not know the etiology. She also notes a history of nephrectomy which she states was I/s/o lupus. However she was not able to further elaborate. Patient also noted <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">sharp</span>, Left-sided, chest pain since 11pm . She first noted the pain when she got out of bed to use the restroom. Pain is worse with laying on her side. <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Associated with</span> shortness of <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">breath</span>. Nonradiating. Denies any associated, nausea, vomiting, diaphoresis. Denies any hemoptysis, leg swelling, recent surgeries, personal or family history of blood clots. Denies history of similar chest pain. Patient reports seeing cardiologist in the , reports stress test <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">years</span> ago but does not recall the results. No history of catheterization. Denies history of heart failure. Patient persistently tachycardic in ED with + d-dimer however unable to acquire CTA I/s/o elevated Cr. Was started empirically on a heparin gtt. In the ED, - Initial Vitals: T: 98.5, HR 109, BP: 174/74, RR: 19, O2 100% - Labs: CBC: Hgb: 10.5 BMP: K 5.8 BUN: 53, Cr: 2.8, Bicarb: 19 Cl: 110 Ag: 15 Ca: 9, PO4: 3.6, Mg 1.3 Trops: <0.01, BNP: 18000 VBG: pH 7.32, pCO2: 38, base xs: -5 Lactate: 2.2 D-Dimer: 791 U/A: Moderate blood, 100 Protein, pH 6.5, Negative nitritie. UCx: Pending - Imaging: CXR x 2: There is mild prominence of the pulmonary interstitial markings suggestive of mild pulmonary edema - Consults: none - Interventions: 1L IVF, ASA 324 Lasix 20mg IV x1 Insulin regular 10units Omeprazole 40mg PO , Nifedpine 30mg Morphine IV x2 Mag Sulfate 2gm x1 Heparin gtt ROS: Positives as per <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">HPI</span>; otherwise negative.
+
+Hospital Course: ICU Course: Pt was admitted to ICU for sinus tachycardia and c/f PE. She remained normotensive and her chest pain was noted to be reproducible with <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">palpation</span>. She was maintained on a heparin gtt while further workup for PE was performed. were negative and V/Q scan was ordered as CTA was avoided due to <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">impaired</span> renal function. Her hyperkalemia and non-anion gap metabolic acidosis were thought most consistent with a type IV RTA. She received insulin/dextrose & Lasix in the ED with resolution of her hyperkalemia. Her home celecoxib was held I/s/o . The patient was <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">transferred</span> to on for ongoing medical care for which the following problems were cared for. The patient was medically free for discharge on to home with and follow up with PCP, primary <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Cardiology</span>, peripheral vascular disease <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Cardiology</span>, and nephrology. Pleuritic chest pain: No evidence of PE on V/Q. ECHO without pericardial thickening or effusion. ECG with LBBB, no Sgarbosa's. Negative cardiac enzymes on repeat evaluation thus low concern for ACS. Reproducibility on exam suggested MSK etiology such as rib contusion or possibly costrochondritis with significant improvement with standing Tylenol and lidocaine patch. HFrEF: Presumed prior MI. EF 28% unclear prior. Low EF was not <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Associated with</span> signs of cardiogenic shock. <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Cardiology</span> was consulted for work up and further <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">management</span> of newly diagnosed HFrEF (EF 28%) on transthoracic echocardiogram. pMIBI showed normal perfusion. The patient was started on Toprol and uptitrated to 50mg once daily prior to discharge. were deferred to be initiated as outpatient in setting of CKD stage IV-V. The patient was made to follow up with her family's cardiologist Dr. for consideration for CRT if her EF doesn't improve in 3 months or so. Right subclavian steal: upper extremity dopplers and carotid dopplers detected reversal of flow in the R vertebral artery. The patient was recommended to follow up with Dr. as outpatient for consideration of a peripheral intervention. CT angiography or MR angiography was not undertaken given patient's borderline renal function with a Cr ~3 in setting of CKD stage IV-V. CKD S/p Nephrectomy AGMA hyperkalemia Cr 2.8 on admission, unclear baseline. She is s/p nephrectomy for RAS after failing renal artery stenting in . Etiology of renal insufficiency likely due to advanced CKD in setting of the above and not RTA type IV per nephrology. Patient did not meet criteria for initiation of <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">acute dialysis</span> during this hospital stay. Patient was started on Sevalemer and sodium bicarbonate. Patient required two doses of Kayexalate due to hyperkalemia and had received Lasix with in the ER. The patient was to follow with Dr. once discharged. - AM cortisol without c/f adrenal insufficiency - patient had PPD placed on for possibly initiating dialysis in the near future with readings to be done in PCP office following discharge. Anemia Unclear baseline. Hgb 10.6 and stable since admission. Ferritin elevated and Tsat 13%. <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">B12</span> and Folate replete. Most likely chronic due to AoCKD (?SLE) and CKD. Possible SLE , ESR, CRP (all wnl). Patient was not started on steroids or other treatment for the hx of SLE during her hospital stay.</td>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">History of present illness</span>: female with past medical history of <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">HYPERTENSIVE DISEASE</span>, hyperlipidemia, nephrectomy who recently emigrated from the 1 month ago, presented to ER as a referral for hyperkalemia. Patient went to establish care at office on . Labwork noted to be hyperkalemic, sent to ER for further evaluation. She does note that she was hyperkalemic years ago however did not know the etiology. She also notes a history of nephrectomy which she states was I/s/o lupus. However she was not able to further elaborate. Patient also noted <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Sharp sensation quality</span>, Left-sided, chest pain since 11pm . She first noted the pain when she got out of bed to use the restroom. Pain is worse with laying on her side. <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Associated</span> shortness of <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Exhaled gas</span>. Nonradiating. Denies any <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Associated</span>, nausea, vomiting, diaphoresis. Denies any hemoptysis, leg swelling, recent surgeries, personal or family history of blood clots. Denies history of similar chest pain. Patient reports seeing cardiologist in the , reports stress test <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">year</span> ago but does not recall the results. No history of catheterization. Denies history of heart failure. Patient persistently tachycardic in ED with + d-dimer however unable to acquire CTA I/s/o elevated Cr. Was started empirically on a heparin gtt. In the ED, - Initial Vitals: T: 98.5, HR 109, BP: 174/74, RR: 19, O2 100% - Labs: CBC: Hgb: 10.5 BMP: K 5.8 BUN: 53, Cr: 2.8, Bicarb: 19 Cl: 110 Ag: 15 Ca: 9, PO4: 3.6, Mg 1.3 Trops: <0.01, BNP: 18000 VBG: pH 7.32, pCO2: 38, base xs: -5 Lactate: 2.2 D-Dimer: 791 U/A: Moderate blood, 100 Protein, pH 6.5, Negative nitritie. UCx: Pending - Imaging: CXR x 2: There is mild prominence of the pulmonary interstitial markings suggestive of mild pulmonary edema - Consults: none - Interventions: 1L IVF, ASA 324 Lasix 20mg IV x1 Insulin regular 10units Omeprazole 40mg PO , Nifedpine 30mg Morphine IV x2 Mag Sulfate 2gm x1 Heparin gtt ROS: Positives as per HPI; otherwise negative.
+
+Hospital Course: ICU Course: Pt was admitted to ICU for sinus tachycardia and c/f PE. She remained normotensive and her chest pain was noted to be reproducible with <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Palpation - action</span>. She was maintained on a heparin gtt while further workup for PE was performed. were negative and V/Q scan was ordered as CTA was avoided due to <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Impairment</span> renal function. Her hyperkalemia and non-anion gap metabolic acidosis were thought most consistent with a type IV RTA. She received insulin/dextrose & Lasix in the ED with resolution of her hyperkalemia. Her home celecoxib was held I/s/o . The patient was <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Delivery</span> to on for ongoing medical care for which the following problems were cared for. The patient was medically free for discharge on to home with and follow up with PCP, primary cardiology, peripheral vascular disease cardiology, and nephrology. Pleuritic chest pain: No evidence of PE on V/Q. ECHO without pericardial thickening or effusion. ECG with LBBB, no Sgarbosa's. Negative cardiac enzymes on repeat evaluation thus low concern for ACS. Reproducibility on exam suggested MSK etiology such as rib contusion or possibly costrochondritis with significant improvement with standing Tylenol and lidocaine patch. HFrEF: Presumed prior MI. EF 28% unclear prior. Low EF was not <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Associated</span> with signs of cardiogenic shock. <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Card</span> was consulted for work up and further <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Managements, Disease</span> of newly diagnosed HFrEF (EF 28%) on transthoracic echocardiogram. pMIBI showed normal perfusion. The patient was started on Toprol and uptitrated to 50mg once daily prior to discharge. were deferred to be initiated as outpatient in setting of CKD stage IV-V. The patient was made to follow up with her family's cardiologist Dr. for consideration for CRT if her EF doesn't improve in 3 months or so. Right subclavian steal: upper extremity dopplers and carotid dopplers detected reversal of flow in the R vertebral artery. The patient was recommended to follow up with <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Human leukocyte antigen DR</span> as outpatient for consideration of a peripheral intervention. CT angiography or MR angiography was not undertaken given patient's borderline renal function with a Cr ~3 in setting of CKD stage IV-V. CKD S/p Nephrectomy AGMA hyperkalemia Cr 2.8 on admission, unclear baseline. She is s/p nephrectomy for RAS after failing renal artery stenting in . Etiology of renal insufficiency likely due to advanced CKD in setting of the above and not RTA type IV per nephrology. Patient did not meet criteria for initiation of <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Acute dialysis program</span> during this hospital stay. Patient was started on Sevalemer and sodium bicarbonate. Patient required two doses of Kayexalate due to hyperkalemia and had received Lasix with in the ER. The patient was to follow with Dr. once discharged. - AM cortisol without c/f adrenal insufficiency - patient had PPD placed on for possibly initiating dialysis in the near future with readings to be done in PCP office following discharge. Anemia Unclear baseline. Hgb 10.6 and stable since admission. Ferritin elevated and Tsat 13%. <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">TNFAIP1</span> and Folate replete. Most likely chronic due to AoCKD (?SLE) and CKD. Possible SLE , ESR, CRP (all wnl). Patient was not started on steroids or other treatment for the hx of SLE during her hospital stay.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: I21.0</b>
+                        </td>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: I21.0</b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="border:1px solid #ccc; margin:20px 0;
+        padding:15px; border-radius:8px;">
+            <h3 style="margin:0 0 10px 0;">
+                Patient ID: 23271725
+                <span style="background:#ccffcc;
+                padding:4px 10px; border-radius:4px;
+                font-size:0.9em;">✅ STABLE</span>
+                
+            </h3>
+            <table style="font-size:0.9em; border-collapse:collapse;
+            margin-bottom:10px;">
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Ground Truth:</b></td>
+                    <td>Intestinal or peritoneal adhesions with obstruction (postoperative) (postinfection)
+                    (56081 v9)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Original Prediction:</b></td>
+                    <td>K56.9 — Acute Pancreatitis
+                    (baseline sim: 0.8875)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Changes Made:</b></td>
+                    <td>bowel movements -> Bowel action [UMLS] | decision -> Call [UMLS] | paucity -> Paucity of peroxisomes [UMLS] | film -> Film Dose Form [UMLS] | ileum -> Ileal structure [UMLS] | situation -> Case [UMLS] | paucity -> Paucity of peroxisomes [UMLS] | dilated -> Ectatic [UMLS] | woman -> Girls [UMLS]
+                    (9 words)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Text Similarity:</b></td>
+                    <td>0.9986</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top:10px;">
+                <div style="margin-bottom:8px; font-size:0.85em;">
+                    <span style="background:#FF6B6B; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● Original words</span>&nbsp;
+                    <span style="background:#51C878; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● UMLS/RxNorm replacements</span>
+                </div>
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <th style="width:50%; background:#e8f4f8;
+                        padding:8px; border:1px solid #ccc;">
+                        Original Text</th>
+                        <th style="width:50%; background:#fff8e8;
+                        padding:8px; border:1px solid #ccc;">
+                        Perturbed Text (UMLS/RxNorm)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: This was a <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">woman</span>, who in the remote past, had undergone a total abdominal hysterectomy for benign disease. years prior to the present admission, she apparently had required hospitalization for a presumed small intestinal obstruction that had resolved without need for surgery. However, the patient presented to our emergency room 3 days prior to the present operation with a several-day history of abdominal discomfort, nausea and vomiting. A plain <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">film</span> of the abdomen followed by a CT scan suggested a distal fairly high-grade small bowel obstruction. She had essentially no gas in the colon and a convincing transition point in the very distal <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">ileum</span> with markedly <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dilated</span> small intestine proximal to this. Her admission white blood cell count was elevated. She had mild right lower quadrant tenderness. I initially managed her with nasogastric decompression. However, her nasogastric tube was never very productive. She remained distended. On the third hospital day, her white blood count remained elevated at 14.6. She longer complained of discomfort. She actually had 1 or 2 small recorded <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">bowel movements</span> and reported passing flatus. However, she remained quite distended. A plain <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">film</span> the abdomen showed persistently <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dilated</span> small intestine, measuring up to 5-6 cm. There was a <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">paucity</span></span> of gas within the colon. Although her <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">situation</span> was not completely straightforward, I found it disturbing that her white blood count remained elevated and that she had not made truly significant progress. Accordingly, I advised the patient and her family to undergo exploratory surgery to relieve her obstruction, and also to be certain that she did not have ischemic enteritis as a cause for her elevated white blood cell count. They freely consented to proceed.
+
+Hospital Course: <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">woman</span>, who in the remote past, had undergone a total abdominal hysterectomy for benign disease. years prior to the present admission, she apparently had required hospitalization for a presumed small intestinal obstruction that had resolved without need for surgery. However, the patient presented to our emergency room 3 days prior to the present operation with a several-day history of abdominal discomfort, nausea and vomiting. A plain <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">film</span> of the abdomen followed by a CT scan suggested a distal fairly high-grade small bowel obstruction. She had essentially no gas in the colon and a convincing transition point in the very distal <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">ileum</span> with markedly <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dilated</span> small intestine proximal to this. Her admission white blood cell count was elevated. She had mild right lower quadrant tenderness. She was initially managed with nasogastric decompression. However, her nasogastric tube was never very productive. She remained distended. On the third hospital day, her white blood count remained elevated at 14.6. She no longer complained of discomfort. She actually had 1 or 2 small recorded <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">bowel movements</span> and reported passing flatus. However, she remained quite distended. A plain <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">film</span> the abdomen showed persistently <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dilated</span> small intestine, measuring up to 5-6 cm. There was a <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">paucity</span></span> of gas within the colon. Although her <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">situation</span> was not completely straightforward, and the <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">decision</span> was made to take the patient to the OR for exploratory laparatomy. The patient tolerated the procedure well and recovered on the floor. The patient passed gas on POD6 and his diet was slowely advanced. Patient was having <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">bowel movements</span> on POD7. The patient was discharged with AVSS, ambulating, tol dit, voiding and habing <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">bowel movements</span>.</td>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: This was a <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Girls</span>, who in the remote past, had undergone a total abdominal hysterectomy for benign disease. years prior to the present admission, she apparently had required hospitalization for a presumed small intestinal obstruction that had resolved without need for surgery. However, the patient presented to our emergency room 3 days prior to the present operation with a several-day history of abdominal discomfort, nausea and vomiting. A plain film of the abdomen followed by a CT scan suggested a distal fairly high-grade small bowel obstruction. She had essentially no gas in the colon and a convincing transition point in the very distal ileum with markedly <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Ectatic</span> small intestine proximal to this. Her admission white blood cell count was elevated. She had mild right lower quadrant tenderness. I initially managed her with nasogastric decompression. However, her nasogastric tube was never very productive. She remained distended. On the third hospital day, her white blood count remained elevated at 14.6. She longer complained of discomfort. She actually had 1 or 2 small recorded bowel movements and reported passing flatus. However, she remained quite distended. A plain film the abdomen showed persistently dilated small intestine, measuring up to 5-6 cm. There was a <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Paucity of peroxisomes</span></span> of gas within the colon. Although her <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Case</span> was not completely straightforward, I found it disturbing that her white blood count remained elevated and that she had not made truly significant progress. Accordingly, I advised the patient and her family to undergo exploratory surgery to relieve her obstruction, and also to be certain that she did not have ischemic enteritis as a cause for her elevated white blood cell count. They freely consented to proceed.
+
+Hospital Course: woman, who in the remote past, had undergone a total abdominal hysterectomy for benign disease. years prior to the present admission, she apparently had required hospitalization for a presumed small intestinal obstruction that had resolved without need for surgery. However, the patient presented to our emergency room 3 days prior to the present operation with a several-day history of abdominal discomfort, nausea and vomiting. A plain film of the abdomen followed by a CT scan suggested a distal fairly high-grade small bowel obstruction. She had essentially no gas in the colon and a convincing transition point in the very distal <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Ileal structure</span> with markedly dilated small intestine proximal to this. Her admission white blood cell count was elevated. She had mild right lower quadrant tenderness. She was initially managed with nasogastric decompression. However, her nasogastric tube was never very productive. She remained distended. On the third hospital day, her white blood count remained elevated at 14.6. She no longer complained of discomfort. She actually had 1 or 2 small recorded bowel movements and reported passing flatus. However, she remained quite distended. A plain <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Film Dose Form</span> the abdomen showed persistently dilated small intestine, measuring up to 5-6 cm. There was a <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Paucity of peroxisomes</span></span> of gas within the colon. Although her situation was not completely straightforward, and the <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Call</span> was made to take the patient to the OR for exploratory laparatomy. The patient tolerated the procedure well and recovered on the floor. The patient passed gas on POD6 and his diet was slowely advanced. Patient was having <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Bowel action</span> on POD7. The patient was discharged with AVSS, ambulating, tol dit, voiding and habing bowel movements.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: K56.9</b>
+                        </td>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: K56.9</b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="border:1px solid #ccc; margin:20px 0;
+        padding:15px; border-radius:8px;">
+            <h3 style="margin:0 0 10px 0;">
+                Patient ID: 22124877
+                <span style="background:#ccffcc;
+                padding:4px 10px; border-radius:4px;
+                font-size:0.9em;">✅ STABLE</span>
+                
+            </h3>
+            <table style="font-size:0.9em; border-collapse:collapse;
+            margin-bottom:10px;">
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Ground Truth:</b></td>
+                    <td>Mild or unspecified pre-eclampsia, delivered, with or without mention of antepartum condition
+                    (64241 v9)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Original Prediction:</b></td>
+                    <td>O15.9 — Eclampsia without convulsions
+                    (baseline sim: 0.9146)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Changes Made:</b></td>
+                    <td>SHe -> Adnfle [UMLS] | active labor -> Normal labor [UMLS] | morning -> om - omni mane [UMLS] | HPI -> History of present illness [UMLS]
+                    (4 words)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Text Similarity:</b></td>
+                    <td>0.9835</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top:10px;">
+                <div style="margin-bottom:8px; font-size:0.85em;">
+                    <span style="background:#FF6B6B; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● Original words</span>&nbsp;
+                    <span style="background:#51C878; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● UMLS/RxNorm replacements</span>
+                </div>
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <th style="width:50%; background:#e8f4f8;
+                        padding:8px; border:1px solid #ccc;">
+                        Original Text</th>
+                        <th style="width:50%; background:#fff8e8;
+                        padding:8px; border:1px solid #ccc;">
+                        Perturbed Text (UMLS/RxNorm)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">HPI</span>: <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">HPI</span>: yo G1P0 at GA presents for PIH eval. Patient reports having BP 140s/80s on , rpt 2 hours later 121/66. <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">SHe</span> attributes this to anxiety. Started a 24hr urine collection early this <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">morning</span>. Woke up this <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">morning</span> and noticed that her feet were suddenly more swollen that usual, same on both sides. Mild headache earlier, although this has now resolved. No RUQ/epigastric pain/vision changes/SOB. No ctxns. +AFM. No LOF/VB.
+
+Hospital Course: <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">SHe</span> was admitted with a diagnosis of preeclampsia and underwent IOL with cytotec. <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">SHe</span> delivered on a healthy baby girl. Her insulin was managed on insulin drip while in <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">active labor</span> and her blood suagrs were well controlled. The Jsolin was consulted as well. <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">SHe</span> went home on PPD 3 after 24 hours of magnesium sulfate. Her PP BP were all less than 150/100 and no antihypertensive was started. <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">SHe</span> will be seen in the office in less than one week after discharge home. PP depression was reviewed.</td>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">History of present illness</span>: HPI: yo G1P0 at GA presents for PIH eval. Patient reports having BP 140s/80s on , rpt 2 hours later 121/66. She attributes this to anxiety. Started a 24hr urine collection early this <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">om - omni mane</span>. Woke up this morning and noticed that her feet were suddenly more swollen that usual, same on both sides. Mild headache earlier, although this has now resolved. No RUQ/epigastric pain/vision changes/SOB. No ctxns. +AFM. No LOF/VB.
+
+Hospital Course: She was admitted with a diagnosis of preeclampsia and underwent IOL with cytotec. SHe delivered on a healthy baby girl. Her insulin was managed on insulin drip while in <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Normal labor</span> and her blood suagrs were well controlled. The Jsolin was consulted as well. She went home on PPD 3 after 24 hours of magnesium sulfate. Her PP BP were all less than 150/100 and no antihypertensive was started. <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Adnfle</span> will be seen in the office in less than one week after discharge home. PP depression was reviewed.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: O15.9</b>
+                        </td>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: O15.9</b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="border:1px solid #ccc; margin:20px 0;
+        padding:15px; border-radius:8px;">
+            <h3 style="margin:0 0 10px 0;">
+                Patient ID: 28588783
+                <span style="background:#ffcccc;
+                padding:4px 10px; border-radius:4px;
+                font-size:0.9em;">❌ DRIFTED</span>
+                
+            </h3>
+            <table style="font-size:0.9em; border-collapse:collapse;
+            margin-bottom:10px;">
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Ground Truth:</b></td>
+                    <td>Encounter for antineoplastic chemotherapy
+                    (V5811 v9)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Original Prediction:</b></td>
+                    <td>C91.9 — Malignant Mucinous Neoplasm
+                    (baseline sim: 0.8583)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Changes Made:</b></td>
+                    <td>brushing -> Brushing, function [UMLS] | myasthenia -> Fatigable weakness [UMLS] | dose -> Dosages [UMLS] | methotrexate -> Amethopterin [UMLS] | ROS -> ROS1 wt Allele [UMLS] | hives -> Urticaria [UMLS] | dexamethasone -> Hexadecadrol [UMLS] | stopped -> To be stopped [UMLS] | methotrexate -> Amethopterin [UMLS]
+                    (9 words)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Text Similarity:</b></td>
+                    <td>0.9975</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top:10px;">
+                <div style="margin-bottom:8px; font-size:0.85em;">
+                    <span style="background:#FF6B6B; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● Original words</span>&nbsp;
+                    <span style="background:#51C878; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● UMLS/RxNorm replacements</span>
+                </div>
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <th style="width:50%; background:#e8f4f8;
+                        padding:8px; border:1px solid #ccc;">
+                        Original Text</th>
+                        <th style="width:50%; background:#fff8e8;
+                        padding:8px; border:1px solid #ccc;">
+                        Perturbed Text (UMLS/RxNorm)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: is a woman with primary CNS lymphoma discovered after she presented with gait disturbance and imbalance. She was initially started on <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dexamethasone</span> and posterior fossa mass mostly disappeared. She was monitored and it quickly returned along with symptoms, so had open biopsy in . Once lymphoma was confirmed she started high-<span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dose</span> <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">methotrexate</span></span>. After cycle 5, she had residual disease so continued on the Q2-week regimen. She presents today for admission for cycle 10 high <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dose</span> <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">methotrexate</span></span>. Cycle 8 she had hand flushing/numbness after starting <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">methotrexate</span></span>, so infusion was <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">stopped</span>, but successfully finished the following day after premeds with Benadryl and <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dexamethasone</span>. She had started having <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">hives</span> several days before that infusion. Cycle 9 she again had similar symptoms, infusion <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">stopped</span> after <20% of the <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dose</span>. a few days later she had diffuse <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">hives</span>. She saw an allergist after discharge and IgE mediated <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">methotrexate</span></span> allergy was confirmed. On day of discharge, she reports feeling "tired", but "ready to roll" (home). She currently denies any problems, including <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">hives</span> or f/c. She reports the mild rash she has on her chest is chronic and non-pruritic. She reports typically having low grade temps with chemo. She endorses her usual mild nausea, which is controlled with prn ondansetron. No emesis, no cp, no sob, no diarrhea, no constipation, no abdominal pain and no dysuria. REVIEW OF SYSTEMS (on admit): (+) Per HPI (-) She denies fever, chills, night sweats, recent weight loss or gain. She denies headache, rhinorrhea or congestion. Denies cough, shortness of breath, or wheezing. She denies chest pain, chest pressure, or weakness. She denies nausea, vomiting, diarrhea, constipation, abdominal pain. She denies dysuria, arthralgias or myalgias. All other <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">ROS</span> negative
+
+Hospital Course: year old woman with CNS lymphoma admitted for high <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dose</span> <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">methotrexate</span></span>, found to have <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">methotrexate</span></span> allergy after previous infusion reactions. CNS lymphoma: Cycle 10 HD MTX. She received the <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">methotrexate</span></span> via desensitization protocol developed by allergist and pharmacy. High <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dose</span> <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">methotrexate</span></span> therapy required developing a high peak concentration, so her total <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dose</span> was increased to 10,000 mg (planned <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">dose</span> for cycle 9 was 9,300 mg) to allow more of the drug to be given during the final 2 hours of the desensitization. She had some scratchy throat during the last step of the infusion. The infusion was <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">stopped</span> for about 15 minutes and she received additional benadryl. The infusion was restarted and she tolerated the rest of the infusion. She did not develop <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">hives</span> or palmar warmth/erythema which she has had before. She had not wheezing, shortness of breath, or hypotension. Ptosis, bilateral: Chronic for past years. Initially concerning for <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">myasthenia</span> , antibodies negative. Thrush: Resolved. Patient reports <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">brushing</span> her tongue with toothpaste after being on nystatin swish & swallow was most effective. Will continue home nystatin s&s. DVT ppx: Ambulation (pt prefers no heparin) Diet: Regular mtx IV access: Port Precautions: None Code status: Full DISPO: Will discharge to home since mtx is <0.1. , MD, pager</td>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: is a woman with primary CNS lymphoma discovered after she presented with gait disturbance and imbalance. She was initially started on dexamethasone and posterior fossa mass mostly disappeared. She was monitored and it quickly returned along with symptoms, so had open biopsy in . Once lymphoma was confirmed she started high-dose <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Amethopterin</span></span>. After cycle 5, she had residual disease so continued on the Q2-week regimen. She presents today for admission for cycle 10 high dose methotrexate. Cycle 8 she had hand flushing/numbness after starting methotrexate, so infusion was <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">To be stopped</span>, but successfully finished the following day after premeds with Benadryl and <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Hexadecadrol</span>. She had started having <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Urticaria</span> several days before that infusion. Cycle 9 she again had similar symptoms, infusion stopped after <20% of the dose. a few days later she had diffuse hives. She saw an allergist after discharge and IgE mediated methotrexate allergy was confirmed. On day of discharge, she reports feeling "tired", but "ready to roll" (home). She currently denies any problems, including hives or f/c. She reports the mild rash she has on her chest is chronic and non-pruritic. She reports typically having low grade temps with chemo. She endorses her usual mild nausea, which is controlled with prn ondansetron. No emesis, no cp, no sob, no diarrhea, no constipation, no abdominal pain and no dysuria. REVIEW OF SYSTEMS (on admit): (+) Per HPI (-) She denies fever, chills, night sweats, recent weight loss or gain. She denies headache, rhinorrhea or congestion. Denies cough, shortness of breath, or wheezing. She denies chest pain, chest pressure, or weakness. She denies nausea, vomiting, diarrhea, constipation, abdominal pain. She denies dysuria, arthralgias or myalgias. All other <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">ROS1 wt Allele</span> negative
+
+Hospital Course: year old woman with CNS lymphoma admitted for high dose methotrexate, found to have methotrexate allergy after previous infusion reactions. CNS lymphoma: Cycle 10 HD MTX. She received the <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;"><span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Amethopterin</span></span> via desensitization protocol developed by allergist and pharmacy. High <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Dosages</span> methotrexate therapy required developing a high peak concentration, so her total dose was increased to 10,000 mg (planned dose for cycle 9 was 9,300 mg) to allow more of the drug to be given during the final 2 hours of the desensitization. She had some scratchy throat during the last step of the infusion. The infusion was stopped for about 15 minutes and she received additional benadryl. The infusion was restarted and she tolerated the rest of the infusion. She did not develop hives or palmar warmth/erythema which she has had before. She had not wheezing, shortness of breath, or hypotension. Ptosis, bilateral: Chronic for past years. Initially concerning for <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Fatigable weakness</span> , antibodies negative. Thrush: Resolved. Patient reports <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Brushing, function</span> her tongue with toothpaste after being on nystatin swish & swallow was most effective. Will continue home nystatin s&s. DVT ppx: Ambulation (pt prefers no heparin) Diet: Regular mtx IV access: Port Precautions: None Code status: Full DISPO: Will discharge to home since mtx is <0.1. , MD, pager</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: C91.9</b>
+                        </td>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: C88.9</b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="border:1px solid #ccc; margin:20px 0;
+        padding:15px; border-radius:8px;">
+            <h3 style="margin:0 0 10px 0;">
+                Patient ID: 20269623
+                <span style="background:#ccffcc;
+                padding:4px 10px; border-radius:4px;
+                font-size:0.9em;">✅ STABLE</span>
+                
+            </h3>
+            <table style="font-size:0.9em; border-collapse:collapse;
+            margin-bottom:10px;">
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Ground Truth:</b></td>
+                    <td>Diverticulosis of large intestine without perforation or abscess without bleeding
+                    (K5730 v10)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Original Prediction:</b></td>
+                    <td>K92.9 — Other specified disorders
+                    (baseline sim: 0.8666)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Changes Made:</b></td>
+                    <td>Decision -> Call [UMLS] | hematemesis -> Hematemeses [UMLS] | nausea -> Nausea:PrThr:Pt:^Patient:Ord [UMLS] | BMs -> Oral Dysesthesia [UMLS] | diagnosed -> Diagnoses [UMLS]
+                    (5 words)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Text Similarity:</b></td>
+                    <td>0.9906</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top:10px;">
+                <div style="margin-bottom:8px; font-size:0.85em;">
+                    <span style="background:#FF6B6B; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● Original words</span>&nbsp;
+                    <span style="background:#51C878; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● UMLS/RxNorm replacements</span>
+                </div>
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <th style="width:50%; background:#e8f4f8;
+                        padding:8px; border:1px solid #ccc;">
+                        Original Text</th>
+                        <th style="width:50%; background:#fff8e8;
+                        padding:8px; border:1px solid #ccc;">
+                        Perturbed Text (UMLS/RxNorm)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: with AF on digoxin and Xarelto, liposarcoma <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">diagnosed</span> years ago on his bilateral scrotum s/p orchiectomy without any XRT for at least years (and never on chemotherapy), and question of fatty liver who presents with melena and BRBPR x4 episodes this AM. He was in his normal state of health until he awoke at 4am this morning feeling like he needed to move his bowels, at which time he had a large black-ish soft stool with bright red blood in the toilet. This happened once more, and then had two similar, though small <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">BMs</span>. He has never had this before. Denies abdominal pain, <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">nausea</span>, vomiting, <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">hematemesis</span>. He called his PCP this morning, who requested come to ED for evaluation. Denies chest pain, shortness of breath, lightheadedness, dizziness. Last colonoscopy in showed diverticulosis in the sigmoid and descending colon and 1 sessile polyp in the transverse colon, which was removed. Has no past history of GI bleeding. No recent illnesses, no changes in diet, no recent travel. Of note, pt takes rivaroxaban for a fib, last dose was in on (night prior to admission). In the ED, initial vitals were: 97.5 123 140/87 22 97% RA Exam notable for pt appearing well but tachycardic, abdomen soft, non tender, guaiac grossly + with red blood (small amount) Labs showed Hgb 13.7, MCV 91, INR 1.3 Transfer VS were 97.6 108 138/91 20 98% RA <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Decision</span> was made to admit to medicine for further management.</td>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: with AF on digoxin and Xarelto, liposarcoma <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Diagnoses</span> years ago on his bilateral scrotum s/p orchiectomy without any XRT for at least years (and never on chemotherapy), and question of fatty liver who presents with melena and BRBPR x4 episodes this AM. He was in his normal state of health until he awoke at 4am this morning feeling like he needed to move his bowels, at which time he had a large black-ish soft stool with bright red blood in the toilet. This happened once more, and then had two similar, though small <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Oral Dysesthesia</span>. He has never had this before. Denies abdominal pain, <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Nausea:PrThr:Pt:^Patient:Ord</span>, vomiting, <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Hematemeses</span>. He called his PCP this morning, who requested come to ED for evaluation. Denies chest pain, shortness of breath, lightheadedness, dizziness. Last colonoscopy in showed diverticulosis in the sigmoid and descending colon and 1 sessile polyp in the transverse colon, which was removed. Has no past history of GI bleeding. No recent illnesses, no changes in diet, no recent travel. Of note, pt takes rivaroxaban for a fib, last dose was in on (night prior to admission). In the ED, initial vitals were: 97.5 123 140/87 22 97% RA Exam notable for pt appearing well but tachycardic, abdomen soft, non tender, guaiac grossly + with red blood (small amount) Labs showed Hgb 13.7, MCV 91, INR 1.3 Transfer VS were 97.6 108 138/91 20 98% RA <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Call</span> was made to admit to medicine for further management.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: K92.9</b>
+                        </td>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: K92.9</b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="border:1px solid #ccc; margin:20px 0;
+        padding:15px; border-radius:8px;">
+            <h3 style="margin:0 0 10px 0;">
+                Patient ID: 23639462
+                <span style="background:#ffcccc;
+                padding:4px 10px; border-radius:4px;
+                font-size:0.9em;">❌ DRIFTED</span>
+                
+            </h3>
+            <table style="font-size:0.9em; border-collapse:collapse;
+            margin-bottom:10px;">
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Ground Truth:</b></td>
+                    <td>Atherosclerosis of native arteries of the extremities with intermittent claudication
+                    (44021 v9)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Original Prediction:</b></td>
+                    <td>I69.359 — Traumatic subdural hematoma
+                    (baseline sim: 0.8479)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Changes Made:</b></td>
+                    <td>None
+                    (0 words)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Text Similarity:</b></td>
+                    <td>1.0000</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top:10px;">
+                <div style="margin-bottom:8px; font-size:0.85em;">
+                    <span style="background:#FF6B6B; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● Original words</span>&nbsp;
+                    <span style="background:#51C878; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● UMLS/RxNorm replacements</span>
+                </div>
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <th style="width:50%; background:#e8f4f8;
+                        padding:8px; border:1px solid #ccc;">
+                        Original Text</th>
+                        <th style="width:50%; background:#fff8e8;
+                        padding:8px; border:1px solid #ccc;">
+                        Perturbed Text (UMLS/RxNorm)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: This is a gentleman with history of bilateral lower extremity claudication with discomfort on ambulation, greater on the left lower extremity relative to the contralateral limb. He was consented for a bilateral lower extremity arteriogram and possible angioplasty and stenting.
+
+Hospital Course: Mr. was admitted on with claudication.He agreed to have an elective surgery. Pre-operatively, she/he was consented. A CXR, EKG, UA, CBC, Electrolytes, T/S - were obtained, all other preperations were made. It was decided that she would undergo a: left fem endarterectomy; fem-BK pop bypass with NRGSV He was prepped, and brought down to the operating room for surgery. Intra-operatively, he was closely monitored and remained hemodynamically stable. He tolerated the procedure well without any difficulty or complication. Post-operatively,he was extubated and transferred to the PACU for further stabilization and monitoring. He was then transferred to the VICU for further recovery. While in the VICU he recieved monitered care. When stable he was delined. His diet was advanced. A consult was obtained. When he was stabalized from the acute setting of post operative care, he was transfered to floor status On the floor, he remained hemodynamically stable with his pain controlled. He progressed with physical therapy to improve her strength and mobility. He continues to make steady progress without any incidents. He was discharged to a rehabilitation facility in stable condition. To note did have atrial tachycardis. Put on Amio drip. EP consult. tachycardia resovled. Amio DC'd</td>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: This is a gentleman with history of bilateral lower extremity claudication with discomfort on ambulation, greater on the left lower extremity relative to the contralateral limb. He was consented for a bilateral lower extremity arteriogram and possible angioplasty and stenting.
+
+Hospital Course: Mr. was admitted on with claudication.He agreed to have an elective surgery. Pre-operatively, she/he was consented. A CXR, EKG, UA, CBC, Electrolytes, T/S - were obtained, all other preperations were made. It was decided that she would undergo a: left fem endarterectomy; fem-BK pop bypass with NRGSV He was prepped, and brought down to the operating room for surgery. Intra-operatively, he was closely monitored and remained hemodynamically stable. He tolerated the procedure well without any difficulty or complication. Post-operatively,he was extubated and transferred to the PACU for further stabilization and monitoring. He was then transferred to the VICU for further recovery. While in the VICU he recieved monitered care. When stable he was delined. His diet was advanced. A consult was obtained. When he was stabalized from the acute setting of post operative care, he was transfered to floor status On the floor, he remained hemodynamically stable with his pain controlled. He progressed with physical therapy to improve her strength and mobility. He continues to make steady progress without any incidents. He was discharged to a rehabilitation facility in stable condition. To note did have atrial tachycardis. Put on Amio drip. EP consult. tachycardia resovled. Amio DC'd</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: I69.359</b>
+                        </td>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: </b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="border:1px solid #ccc; margin:20px 0;
+        padding:15px; border-radius:8px;">
+            <h3 style="margin:0 0 10px 0;">
+                Patient ID: 25802941
+                <span style="background:#ccffcc;
+                padding:4px 10px; border-radius:4px;
+                font-size:0.9em;">✅ STABLE</span>
+                
+            </h3>
+            <table style="font-size:0.9em; border-collapse:collapse;
+            margin-bottom:10px;">
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Ground Truth:</b></td>
+                    <td>Hepatic encephalopathy
+                    (5722 v9)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Original Prediction:</b></td>
+                    <td> — 
+                    (baseline sim: 0.7722)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Changes Made:</b></td>
+                    <td>None
+                    (0 words)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Text Similarity:</b></td>
+                    <td>1.0000</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top:10px;">
+                <div style="margin-bottom:8px; font-size:0.85em;">
+                    <span style="background:#FF6B6B; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● Original words</span>&nbsp;
+                    <span style="background:#51C878; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● UMLS/RxNorm replacements</span>
+                </div>
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <th style="width:50%; background:#e8f4f8;
+                        padding:8px; border:1px solid #ccc;">
+                        Original Text</th>
+                        <th style="width:50%; background:#fff8e8;
+                        padding:8px; border:1px solid #ccc;">
+                        Perturbed Text (UMLS/RxNorm)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: Mr. is a with cryptogenic cirrhosis decompensated with hepatic encephalopthy who presents with altered mental status. According to his , he likes to drive to appointments and does not like to take medications prior to driving. He saw the nutritionist 3 days prior to admission and the dentist the following day. He reportedly became confused on the evening prior to admission, at which time he took at least 1 dose of lactulose after she reminded him. In the ED, initial vital signs were as follows: 97.0 50 154/95 12 100% RA. On exam, he was alert and oriented to self only, lethargic at times and occasionally agitated. Admission labs were not changed significantly from baseline. EKG was interpreted as sinus bradycardia. Urinalysis was unremarkable. Noncontrast head CT was within normal limits. Bedside ultrasound did not show ascites. CXR also was performed. Vital signs prior to transfer: 98.7 46 102/59 12 100% RA. On arrival to the floor, he is lethargic, but responsive to sternal rub.
+
+Hospital Course: Mr. is a with cryptogenic cirrhosis decompensated with hepatic encephalopthy who presented with altered mental status. Active Issues: (1)Hepatic encephalopathy: Confusion was attributed to hepatic encephalopathy in the setting of lactulose noncompliance and resolved with resumption of home lactulose and rifaximin regimen. Infectious work up, including blood and urine cultures and CXR, was unrevealing while noncontrast head CT was negative for acute intracranial abnormality. There was no significant ascites on bedside ultrasound in the ED, hence low suspicion for spontaneous bacterial peritonitis. There was no evidence of portal vein thrombosis on right upper quadrant ultrasound with Doppler. He was urged to adhere to lactulose/rifaximin regimen at home and advised on multiple occasions by different providers not to drive, given risk to himself and others in the likely event of recurrent encephalopathy. (2)Cryptogenic cirrhosis: Liver and synthetic function remained at baseline throughout admission. Home furosemide 80mg bid, held initially in anticipation of copious loose stools as above, was continued, as was home eplerenone 50mg bid. He is not on nadolol in the presence of grade 1 varices as of . Lactulose and rifaximin were continued as above. (3)Leukocytosis: He developed leukocytosis of unclear significance to 15.1 on hospital day 3 in the absence of fever or localizing signs/symptoms of infection. Urine culture was negative at that time, and repeat blood cultures have shown no growth to date. White blood cell count downtrended the following day without dedicated intervention. Inactive Issues: (1)Hypertension: He remained normotensive throughout admission on propranolol 20mg bid in the setting of copious loose stools as above, with home dose 40mg bid resumed at discharge. (2)Hypothyroidism: Home levothyroxine 150mcg daily was continued throughout admission. (3)Gastroesophageal reflux: Home omeprazole 20mg daily was continued throughout admission. Transitional Issues: Left portal vein was not fully evaluated on right upper quadrant ultrasound with Doppler due to limited acoustic window. Repeat ultrasound may be advised in 4 to 6 weeks. Pending studies: Blood cultures x2 ( ) and x2 ( ). Code status: Full.</td>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: Mr. is a with cryptogenic cirrhosis decompensated with hepatic encephalopthy who presents with altered mental status. According to his , he likes to drive to appointments and does not like to take medications prior to driving. He saw the nutritionist 3 days prior to admission and the dentist the following day. He reportedly became confused on the evening prior to admission, at which time he took at least 1 dose of lactulose after she reminded him. In the ED, initial vital signs were as follows: 97.0 50 154/95 12 100% RA. On exam, he was alert and oriented to self only, lethargic at times and occasionally agitated. Admission labs were not changed significantly from baseline. EKG was interpreted as sinus bradycardia. Urinalysis was unremarkable. Noncontrast head CT was within normal limits. Bedside ultrasound did not show ascites. CXR also was performed. Vital signs prior to transfer: 98.7 46 102/59 12 100% RA. On arrival to the floor, he is lethargic, but responsive to sternal rub.
+
+Hospital Course: Mr. is a with cryptogenic cirrhosis decompensated with hepatic encephalopthy who presented with altered mental status. Active Issues: (1)Hepatic encephalopathy: Confusion was attributed to hepatic encephalopathy in the setting of lactulose noncompliance and resolved with resumption of home lactulose and rifaximin regimen. Infectious work up, including blood and urine cultures and CXR, was unrevealing while noncontrast head CT was negative for acute intracranial abnormality. There was no significant ascites on bedside ultrasound in the ED, hence low suspicion for spontaneous bacterial peritonitis. There was no evidence of portal vein thrombosis on right upper quadrant ultrasound with Doppler. He was urged to adhere to lactulose/rifaximin regimen at home and advised on multiple occasions by different providers not to drive, given risk to himself and others in the likely event of recurrent encephalopathy. (2)Cryptogenic cirrhosis: Liver and synthetic function remained at baseline throughout admission. Home furosemide 80mg bid, held initially in anticipation of copious loose stools as above, was continued, as was home eplerenone 50mg bid. He is not on nadolol in the presence of grade 1 varices as of . Lactulose and rifaximin were continued as above. (3)Leukocytosis: He developed leukocytosis of unclear significance to 15.1 on hospital day 3 in the absence of fever or localizing signs/symptoms of infection. Urine culture was negative at that time, and repeat blood cultures have shown no growth to date. White blood cell count downtrended the following day without dedicated intervention. Inactive Issues: (1)Hypertension: He remained normotensive throughout admission on propranolol 20mg bid in the setting of copious loose stools as above, with home dose 40mg bid resumed at discharge. (2)Hypothyroidism: Home levothyroxine 150mcg daily was continued throughout admission. (3)Gastroesophageal reflux: Home omeprazole 20mg daily was continued throughout admission. Transitional Issues: Left portal vein was not fully evaluated on right upper quadrant ultrasound with Doppler due to limited acoustic window. Repeat ultrasound may be advised in 4 to 6 weeks. Pending studies: Blood cultures x2 ( ) and x2 ( ). Code status: Full.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: </b>
+                        </td>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: </b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="border:1px solid #ccc; margin:20px 0;
+        padding:15px; border-radius:8px;">
+            <h3 style="margin:0 0 10px 0;">
+                Patient ID: 21758486
+                <span style="background:#ffcccc;
+                padding:4px 10px; border-radius:4px;
+                font-size:0.9em;">❌ DRIFTED</span>
+                
+            </h3>
+            <table style="font-size:0.9em; border-collapse:collapse;
+            margin-bottom:10px;">
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Ground Truth:</b></td>
+                    <td>Complications of transplanted liver
+                    (99682 v9)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Original Prediction:</b></td>
+                    <td>K85.8 — Other specified gastritis
+                    (baseline sim: 0.7566)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Changes Made:</b></td>
+                    <td>hyperglycemic -> Hyperglycemic Mouse [UMLS] | creatinine -> Creatinine measurement [UMLS] | follow up -> Follow-up [UMLS] | weight loss -> Weight Reduction [UMLS]
+                    (4 words)</td>
+                </tr>
+                <tr>
+                    <td style="padding:3px 12px 3px 0;">
+                    <b>Text Similarity:</b></td>
+                    <td>0.9987</td>
+                </tr>
+            </table>
+            
+            <div style="margin-top:10px;">
+                <div style="margin-bottom:8px; font-size:0.85em;">
+                    <span style="background:#FF6B6B; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● Original words</span>&nbsp;
+                    <span style="background:#51C878; color:white;
+                    padding:2px 8px; border-radius:3px;">
+                    ● UMLS/RxNorm replacements</span>
+                </div>
+                <table style="width:100%; border-collapse:collapse;">
+                    <tr>
+                        <th style="width:50%; background:#e8f4f8;
+                        padding:8px; border:1px solid #ccc;">
+                        Original Text</th>
+                        <th style="width:50%; background:#fff8e8;
+                        padding:8px; border:1px solid #ccc;">
+                        Perturbed Text (UMLS/RxNorm)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: y/o male with a history of fulminant cryptogenic hepatic failure s/p OLT complicated by graft loss due to ischemic cholangiopathy requiring liver/kidney transplant , and h/o VRE cholangitis who presents s/p ERCP. . Of note he was recently admitted after transitioning from daptomycin/tigecycline to levofloxacin which caused transaminitis, fatigue and night sweats thought to be due to either recurrence of his VRE cholangitis, progressive cholangiopathy, recurrent biliary strictures or new bile duct injury. He was discharged on daptomycin and levofloxacin. . He has had persistent pruritis and night sweats despite continuation of antibiotics. ERCP was completed today to elucidate the biliary architecture, no obstruction or dilitation was present. He tolerated the procedure well, no current complaints. . Review of systems: (+) Per HPI (-) Denies fever, chills, recent <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">weight loss</span> or gain. Denies headache, sinus tenderness, rhinorrhea or congestion. Denied cough, shortness of breath. Denied chest pain or tightness, palpitations. Denied nausea, vomiting, diarrhea, constipation or abdominal pain. No recent change in bowel or bladder habits. No dysuria. Denied arthralgias or myalgias.
+
+Hospital Course: is a year old male with a history of fulminant cryptogenic hepatic failure s/p 2 liver transplants, h/o VRE cholangitis on daptomycin/levofloxacin who presents with persistent pruritis and night sweats. He had an ERCP which did not show any clear source of cholangitis or obstruction. It did show a dilated CBD 12 mm and moderate patchy sclerosis of the intrahepatic biliary tree. He was continued on daptomycin and levofloxacin. His outpatient ID physician was contacted. It was decided to continue daptomycin IV until , but continue levofloxacin for suppression. He will have basic labs drawn on and then will have <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">follow up</span> at the liver where his PICC line will be removed. He was noted to have increased <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">creatinine</span> of 1.3 (above baseline 0.8). He was given a fluid challenge of 1 liter NS without change in his <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">creatinine</span>. We advised him to remain hydrated and he will have his <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">creatinine</span> checked . If persistently elevated, we recommend initial workup with renal ultrasound, urine cultures and lytes. He was <span style="background:#FF6B6B; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">hyperglycemic</span> during his hospital stay, admitting to recent diet incompliance. He was continued on his home ISS and encouraged to follow a strict diabetic diet. He had no evidence of DKA. He was FULL CODE for this admission.</td>
+                        <td style="padding:10px; border:1px solid #ccc;
+                        vertical-align:top; white-space:pre-wrap;
+                        font-size:0.85em; line-height:1.6em;">
+                        HPI: y/o male with a history of fulminant cryptogenic hepatic failure s/p OLT complicated by graft loss due to ischemic cholangiopathy requiring liver/kidney transplant , and h/o VRE cholangitis who presents s/p ERCP. . Of note he was recently admitted after transitioning from daptomycin/tigecycline to levofloxacin which caused transaminitis, fatigue and night sweats thought to be due to either recurrence of his VRE cholangitis, progressive cholangiopathy, recurrent biliary strictures or new bile duct injury. He was discharged on daptomycin and levofloxacin. . He has had persistent pruritis and night sweats despite continuation of antibiotics. ERCP was completed today to elucidate the biliary architecture, no obstruction or dilitation was present. He tolerated the procedure well, no current complaints. . Review of systems: (+) Per HPI (-) Denies fever, chills, recent <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Weight Reduction</span> or gain. Denies headache, sinus tenderness, rhinorrhea or congestion. Denied cough, shortness of breath. Denied chest pain or tightness, palpitations. Denied nausea, vomiting, diarrhea, constipation or abdominal pain. No recent change in bowel or bladder habits. No dysuria. Denied arthralgias or myalgias.
+
+Hospital Course: is a year old male with a history of fulminant cryptogenic hepatic failure s/p 2 liver transplants, h/o VRE cholangitis on daptomycin/levofloxacin who presents with persistent pruritis and night sweats. He had an ERCP which did not show any clear source of cholangitis or obstruction. It did show a dilated CBD 12 mm and moderate patchy sclerosis of the intrahepatic biliary tree. He was continued on daptomycin and levofloxacin. His outpatient ID physician was contacted. It was decided to continue daptomycin IV until , but continue levofloxacin for suppression. He will have basic labs drawn on and then will have <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Follow-up</span> at the liver where his PICC line will be removed. He was noted to have increased <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Creatinine measurement</span> of 1.3 (above baseline 0.8). He was given a fluid challenge of 1 liter NS without change in his creatinine. We advised him to remain hydrated and he will have his creatinine checked . If persistently elevated, we recommend initial workup with renal ultrasound, urine cultures and lytes. He was <span style="background:#51C878; color:white; padding:1px 4px; border-radius:3px; font-weight:bold;">Hyperglycemic Mouse</span> during his hospital stay, admitting to recent diet incompliance. He was continued on his home ISS and encouraged to follow a strict diabetic diet. He had no evidence of DKA. He was FULL CODE for this admission.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: K85.8</b>
+                        </td>
+                        <td style="padding:8px; border:1px solid #ccc;
+                        background:#f0f0f0; text-align:center;">
+                        <b>Predicted ICD: K76.6</b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</body>
+</html>

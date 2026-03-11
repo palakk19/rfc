@@ -1,0 +1,375 @@
+hadm_id,ground_truth,original_input,perturbed_input,original_pred,perturbed_pred,similarity,drift,perturbations
+22595853,Portal hypertension,"Chief Complaint:
+Worsening ABD distension and pain 
+ 
+Major Surgical or Invasive History of Present Illness:
+___ HCV cirrhosis c/b ascites, hiv on ART, h/o IVDU, COPD, 
+bioplar, PTSD, presented from OSH ED with worsening abd 
+distension over past week.  
+Pt reports self-discontinuing lasix and spirnolactone ___ weeks 
+ago, because she feels like ""they don't do anything"" and that 
+she ""doesn't want to put more chemicals in her."" She does not 
+follow Na-restricted diets. In the past week, she notes that she 
+has been having worsening abd distension and discomfort. She 
+denies ___ edema, or SOB, or orthopnea. She denies f/c/n/v, d/c, 
+dysuria. She had food poisoning a week ago from eating stale 
+cake (n/v 20 min after food ingestion), which resolved the same 
+day. She denies other recent illness or sick contacts. She notes 
+that she has been noticing gum bleeding while brushing her teeth 
+in recent weeks. she denies easy bruising, melena, BRBPR, 
+hemetesis, hemoptysis, or hematuria.  
+Because of her abd pain, she went to OSH ED and was transferred 
+to ___ for further care. Per ED report, pt has brief period of 
+confusion - she did not recall the ultrasound or bloodwork at 
+osh. She denies recent drug use or alcohol use. She denies 
+feeling confused, but reports that she is forgetful at times.  
+In the ED, initial vitals were 98.4 70 106/63 16 97%RA  
+Labs notable for ALT/AST/AP ___ ___: ___, 
+Tbili1.6, WBC 5K, platelet 77, INR 1.6  
+
+ 
+Past Medical ","Chief Complaint:
+Deterioration. ABD distension and pain 
+ 
+Major Surgical or Invasive History of Present Illness:
+___ HCV cirrhosis c/b ascites, hiv on ART, h/o IVDU, COPD, 
+bioplar, PTSD, presented from OSH ED with worsening abd 
+distension over past week.  
+Pt reports self-discontinuing lasix and spirnolactone ___ weeks 
+ago, because she feels like ""they don't do anything"" and that 
+she ""doesn't want to put more chemicals in her."" She does not 
+follow Na-restricted diets. In the past week, she notes that she 
+has been having worsening abd distension and discomfort. She 
+denies ___ edema, or SOB, or orthopnea. She denies f/c/n/v, d/c, 
+dysuria. She had food poisoning a week ago from eating stale 
+cake (n/v 20 min after food ingestion), which resolved the same 
+day. She denies other recent illness or sick contacts. She notes 
+that she has been noticing gum bleeding while brushing her teeth 
+in recent weeks. she denies easy bruising, melena, BRBPR, 
+hemetesis, hemoptysis, or hematuria.  
+Because of her abd pain, she went to OSH ED and was transferred 
+to ___ for further care. Per ED report, pt has brief period of 
+confusion - she did not recall the ultrasound or bloodwork at 
+osh. She denies recent drug use or alcohol use. She denies 
+feeling confused, but reports that she is forgetful at times.  
+In the ED, initial vitals were 98.4 70 106/63 16 97%RA  
+Labs notable for ALT/AST/AP ___ ___: ___, 
+Tbili1.6, WBC 5K, platelet 77, INR 1.6  
+
+ 
+Past Medical ","The primary diagnosis in 3 words is:
+
+Ascites Complication Cirrhosis","The primary diagnosis in 3 words is:
+
+Ascites Complication Cirrhosis",0.9983785152435303,0,Worsening->Deterioration.
+29079034,Other iatrogenic hypotension,"Chief Complaint:
+altered mental status
+ 
+Major Surgical or Invasive History of Present Illness:
+Mrs. ___ is a ___ female with HIV on HAART, COPD, HCV 
+cirrhosis complicated by ascites and hepatic encephalopathy who 
+initially presented to the ED yesterday with hypotension after a 
+paracentesis.  
+The patient has had accelerated decompensation of her cirrhosis 
+recently with worsening ascites, and she is maintained on twice 
+weekly paracentesis. She was at her regular session yesterday 
+when she had hypotension to SBP ___ and felt lightheadedness. 
+Per the patient, that's when her memory started to get fuzzy. 
+She does not have much recollection of what happened since then. 
+Her outpatient hepatologist saw her and recommended that she go 
+to the ED. In the ED, she was evaluated and deemed to have 
+stable blood pressure. She was discharged home. At home, she had 
+worsening mental status with her daughter getting concerned, and 
+she returned to the ED.  
+In the ED, initial vitals were 98.7 77 96/50 16 98% RA. The 
+patient was only oriented to person. Her labs were notable for 
+Na 126, K 6.7, Cr 0.7 (baseline 0.4), ALT 153, AST 275, TBili 
+1.9, Lip 66, INR 1.5. Initial EKG showed sinus rhythm with 
+peaked T waves. Her head CT was negative for any acute 
+processes. She received ceftriaxone 2gm x1, regular insulin 10U, 
+calcium gluconate 1g, lactulose 30 mL x2, and 25g 5% albumin.  
+On transfer, vitals were 99.0 93 84/40 16 95% NC. On arrival to 
+the MICU, patient was more alert and conversant. She has no 
+abdominal pain, nausea, vomiting, chest pain, or difficulty 
+breathing. She has a chronic cough that is not much changed. She 
+has not had any fever or chills. She reports taking all of her 
+medications except for lactulose, which she thinks taste 
+disgusting.  
+ 
+Past Medical ","Chief Complaint:
+altered mental status
+ 
+Major Chirurgical or Invasive History of Present Illness:
+Mrs. ___ is a ___ female with HIV on HAART, COPD, HCV 
+cirrhosis complicated by ascites and hepatic encephalopathy who 
+initially presented to the ED yesterday with hypotension after a 
+paracentesis.  
+The patient has had accelerated decompensation of her cirrhosis 
+recently with worsening ascites, and she is maintained on twice 
+weekly paracentesis. She was at her regular session yesterday 
+when she had hypotension to SBP ___ and felt lightheadedness. 
+Per the patient, that's when her memory started to get fuzzy. 
+She does not have much recollection of what happened since then. 
+Her outpatient hepatologist saw her and recommended that she go 
+to the ED. In the ED, she was evaluated and deemed to have 
+stable blood pressure. She was discharged home. At home, she had 
+worsening mental status with her daughter getting concerned, and 
+she returned to the ED.  
+In the ED, initial vitals were 98.7 77 96/50 16 98% RA. The 
+patient was only oriented to person. Her labs were notable for 
+Na 126, K 6.7, Cr 0.7 (baseline 0.4), ALT 153, AST 275, TBili 
+1.9, Lip 66, INR 1.5. Initial EKG showed sinus rhythm with 
+peaked T waves. Her head CT was negative for any acute 
+processes. She received ceftriaxone 2gm x1, regular insulin 10U, 
+calcium gluconate 1g, lactulose 30 mL x2, and 25g 5% albumin.  
+On transfer, vitals were 99.0 93 84/40 16 95% NC. On arrival to 
+the MICU, patient was more alert and conversant. She has no 
+abdominal pain, nausea, vomiting, chest pain, or difficulty 
+breathing. She has a chronic cough that is not much changed. She 
+has not had any fever or chills. She reports taking all of her 
+medications except for lactulose, which she thinks taste 
+disgusting.  
+ 
+Past Medical ","The primary diagnosis in 3 words is:
+
+Hepatic Encephalopathy","The primary diagnosis in 3 words is:
+
+Hepatic Encephalopathy",0.9976703524589539,0,Surgical->Chirurgical
+23052089,Dementia with Lewy bodies,"Chief Complaint:
+Visual hallucinations
+ 
+Major Surgical or Invasive History of Present Illness:
+___ male with ___ disease, dyslipidemia, and a
+history of prostate cancer (s/p prostatectomy) who was referred
+to the ED by his neurologist for worsening gait, falls, and
+visual hallucinations. 
+
+The following history is taken from chart ","Chief Complaint:
+Ophthalmic hallucinations
+ 
+Major Surgical or Invasive History of Present Illness:
+___ male with ___ disease, dyslipidemia, and a
+history of prostate cancer (s/p prostatectomy) who was referred
+to the ED by his neurologist for worsening gait, falls, and
+visual hallucinations. 
+
+The following history is taken from chart ",Parkinson's Disease,Parkinson's Disease,0.9975050687789917,0,Visual->Ophthalmic
+22927623,"Dysphagia, unspecified","Chief Complaint:
+dysphagia 
+ 
+Major Surgical or Invasive History of Present Illness:
+ ___ w/ anxiety and several years of dysphagia who p/w worsened 
+foreign body sensation. 
+
+She describes feeling as though food gets stuck in her neck when 
+she eats. She put herself on a pureed diet to address this over 
+the last 10 days. When she has food stuck in the throat, she 
+almost feels as though she cannot breath, but she denies trouble 
+breathing at any other time. She does not have any history of 
+food allergies or skin rashes. 
+ 
+In the ED, initial ","Chief Complaint:
+dysphagia 
+ 
+Major Chirurgical or Invasive History of Present Illness:
+ ___ w/ anxiety and several years of dysphagia who p/w worsened 
+foreign body sensation. 
+
+She describes feeling as though food gets stuck in her neck when 
+she eats. She put herself on a pureed diet to address this over 
+the last 10 days. When she has food stuck in the throat, she 
+almost feels as though she cannot breath, but she denies trouble 
+breathing at any other time. She does not have any history of 
+food allergies or skin rashes. 
+ 
+In the ED, initial ","The primary diagnosis is:
+
+Esophageal Dysphagia","The primary diagnosis is:
+
+Esophageal Dysphagia",0.9982481598854065,0,Surgical->Chirurgical
+27988844,"Unspecified intracapsular fracture of left femur, initial encounter for closed fracture","Chief Complaint:
+Left hip pain 
+ 
+Major Surgical or Invasive History of Present Illness:
+REASON FOR ","Chief Complaint:
+Coxa dolor (left) 
+ 
+Major Surgical or Invasive History of Present Illness:
+REASON FOR ","Unfortunately, it seems like the note is incomplete. However, based on what's provided, I can still attempt to identify a possible primary diagnosis.
+
+The chief complaint is ""Left hip pain"". Without more information, it's difficult to provide a specific diagnosis. However, some common conditions that may cause left hip pain include:
+
+* Osteoarthritis
+* Hip fracture
+* Tendinitis or bursitis
+
+If I had to choose one of these options in 3 words, I would say: ""Left Hip Arthritis"".","Based on the provided information, I can identify the primary diagnosis as:
+
+Left Hip Pain",0.9851827621459961,1,Left hip pain->Coxa dolor (left)
+20600184,Contusion of abdominal wall,"Chief Complaint:
+Right flank bruising and pain s/p fall
+ 
+Major Surgical or Invasive History of Present Illness:
+Mr. ___ is a ___ with history of factor VIII deficiency who 
+presents with right neck swelling after snowboarding accident. 
+The patient reports that he fell while snowboarding with loss of 
+consciousness on ___. He was initially seen at 
+___ where CT imaging of head/neck showed no 
+intracranial hemorrhage. A CTA neck showed a thickened right 
+platysma muscle with surrounding hematoma and a focus of active 
+contrast extravasation within the right platysma muscle. He also 
+developed a right shoulder hematoma although shoulder plain 
+films didn't show acute abnormality. He was seen by ___ 
+Hematology and gave him one dose of DDAVP IV. A factor VIII 
+assay was 139 and vW level was >200 per report. Per report, his 
+hemoglobin decreased from 13.2 on ___ to 11.6 on ___. 
+Repeat imaging in the morning showed stable injuries. The 
+patient saw his hematologist on ___ and was found to have a 
+hemoglobin of 10.4. Because of the continued mild decrease, the 
+patient followed up with his PCP ___ ___ at which time his 
+hemoglobin was 9.9. He was found to have an enlarging flank 
+hematoma, thus was referred given concern for retroperitoneal 
+bleed. The patient has been using DDAVP intranasally 
+intermittently since the accident. He denies lightheadedness or 
+palpitations, any increase in neck swelling over the course of 
+the week. He does endorse pain in his right shoulder ___ 
+resting, ___ moving), though this has improved over the course 
+of the week.  
+In the ED, initial vital signs were 99.2 87 124/75 18 100%/RA. 
+Initial labs demonstrated hemoglobin 10.6, though repeat was 
+9.7. Chemistries and coags were unremarkable. FVIII activity was 
+103. A CTAP was performed which demonstrated muscular hemorrhage 
+along the flank, but no retroperitoneal bleed on preliminary 
+read. The patient's outpatient hematologist, Dr. ___, was 
+contacted and it was decided to give the pa","Chief Complaint:
+Lateral right. bruising and pain s/p fall
+ 
+Major Surgical or Invasive History of Present Illness:
+Mr. ___ is a ___ with history of factor VIII deficiency who 
+presents with right neck swelling after snowboarding accident. 
+The patient reports that he fell while snowboarding with loss of 
+consciousness on ___. He was initially seen at 
+___ where CT imaging of head/neck showed no 
+intracranial hemorrhage. A CTA neck showed a thickened right 
+platysma muscle with surrounding hematoma and a focus of active 
+contrast extravasation within the right platysma muscle. He also 
+developed a right shoulder hematoma although shoulder plain 
+films didn't show acute abnormality. He was seen by ___ 
+Hematology and gave him one dose of DDAVP IV. A factor VIII 
+assay was 139 and vW level was >200 per report. Per report, his 
+hemoglobin decreased from 13.2 on ___ to 11.6 on ___. 
+Repeat imaging in the morning showed stable injuries. The 
+patient saw his hematologist on ___ and was found to have a 
+hemoglobin of 10.4. Because of the continued mild decrease, the 
+patient followed up with his PCP ___ ___ at which time his 
+hemoglobin was 9.9. He was found to have an enlarging flank 
+hematoma, thus was referred given concern for retroperitoneal 
+bleed. The patient has been using DDAVP intranasally 
+intermittently since the accident. He denies lightheadedness or 
+palpitations, any increase in neck swelling over the course of 
+the week. He does endorse pain in his right shoulder ___ 
+resting, ___ moving), though this has improved over the course 
+of the week.  
+In the ED, initial vital signs were 99.2 87 124/75 18 100%/RA. 
+Initial labs demonstrated hemoglobin 10.6, though repeat was 
+9.7. Chemistries and coags were unremarkable. FVIII activity was 
+103. A CTAP was performed which demonstrated muscular hemorrhage 
+along the flank, but no retroperitoneal bleed on preliminary 
+read. The patient's outpatient hematologist, Dr. ___, was 
+contacted and it was decided to give the pa","The primary diagnosis in 3 words is:
+
+Hemorrhagic Hematoma Injury","The primary diagnosis in 3 words is:
+
+Hemorrhagic Hematoma Injury",0.9994089007377625,0,Right flank->Lateral right.
+28979390,"Malignant neoplasm of kidney, except pelvis","Chief Complaint:
+renal mass
+ 
+Major Surgical or Invasive History of Present Illness:
+___ y/o healthy female with incidental finding of right renal 
+mass suspicious for RCC following MRI on ___. 
+ 
+Past Medical ","Chief Complaint:
+renal mass
+ 
+Major Operative or Invasive History of Present Illness:
+___ y/o healthy female with incidental finding of right renal 
+mass suspicious for RCC following MRI on ___. 
+ 
+Past Medical ",Renal Cell Carcinoma.,Renal Cell Carcinoma.,0.9985188841819763,0,Surgical->Operative
+27897940,Closed fracture of nasal bones,"Chief Complaint:
+Epistaxis
+ 
+Major Surgical or Invasive History of Present Illness:
+Mr. ___ is an ___ with history of AAA s/p repair 
+complicated by MI, hypertension, and hyperlipidemia who presents 
+upon transfer from outside hospital with nasal fractures and 
+epistaxis secondary to fall. The patient reports that he was at 
+the ___ earlier this afternoon. While coughing, he tripped 
+on the curb and suffered trauma to his face. He had no loss of 
+consciousness. However, he had a persistent nosebleed and 
+appeared to have some trauma to his face, thus was transferred 
+to ___ for further care. There, a CT scan of 
+the head, neck, and face were remarkable for a nasal bone and 
+septal fracture. Given persistent epistaxis, bilateral 
+RhinoRockets were placed. He had a small abrasion to the bridge 
+of his nose which was not closed. Bleeding was well controlled. 
+While in the OSH ED, he had an episode of nausea and coughed up 
+some blood. At that time, he began to feel lightheaded and was 
+noted to be hypotensive and bradycardic. Per report, he had a 
+brief loss of consciousness, though quickly returned to his 
+baseline. His family noted that his eyes rolled back into his 
+head. The patient recalls the event and denies post-event 
+confusion. He had no further episodes of syncope or hemodynamic 
+changes.  Given the syncopal event and epistaxis, the patient 
+was transferred for further care.
+
+In the ED, initial vital signs 98.9 92 140/77 18 100%/RA. Labs 
+were notable for WBC 11.3 (91%N), H/H 14.1/40.2, plt 147, BUN/Cr 
+36/1.5. HCTs were repeated which were stable. A urinalysis was 
+negative. A CXR demonstrated a focal consolidation at the left 
+lung base, possibly representing aspiration or developing 
+pneumonia. The patient was given Tdap, amoxicillin-clavulanate 
+for antibiotic prophylaxis, ondansetron, 500cc NS, and 
+metoprolol tartrate 50mg. Clopidogrel was held.
+ 
+Past Medical ","Chief Complaint:
+Epistaxis
+ 
+Major Chirurgical or Invasive History of Present Illness:
+Mr. ___ is an ___ with history of AAA s/p repair 
+complicated by MI, hypertension, and hyperlipidemia who presents 
+upon transfer from outside hospital with nasal fractures and 
+epistaxis secondary to fall. The patient reports that he was at 
+the ___ earlier this afternoon. While coughing, he tripped 
+on the curb and suffered trauma to his face. He had no loss of 
+consciousness. However, he had a persistent nosebleed and 
+appeared to have some trauma to his face, thus was transferred 
+to ___ for further care. There, a CT scan of 
+the head, neck, and face were remarkable for a nasal bone and 
+septal fracture. Given persistent epistaxis, bilateral 
+RhinoRockets were placed. He had a small abrasion to the bridge 
+of his nose which was not closed. Bleeding was well controlled. 
+While in the OSH ED, he had an episode of nausea and coughed up 
+some blood. At that time, he began to feel lightheaded and was 
+noted to be hypotensive and bradycardic. Per report, he had a 
+brief loss of consciousness, though quickly returned to his 
+baseline. His family noted that his eyes rolled back into his 
+head. The patient recalls the event and denies post-event 
+confusion. He had no further episodes of syncope or hemodynamic 
+changes.  Given the syncopal event and epistaxis, the patient 
+was transferred for further care.
+
+In the ED, initial vital signs 98.9 92 140/77 18 100%/RA. Labs 
+were notable for WBC 11.3 (91%N), H/H 14.1/40.2, plt 147, BUN/Cr 
+36/1.5. HCTs were repeated which were stable. A urinalysis was 
+negative. A CXR demonstrated a focal consolidation at the left 
+lung base, possibly representing aspiration or developing 
+pneumonia. The patient was given Tdap, amoxicillin-clavulanate 
+for antibiotic prophylaxis, ondansetron, 500cc NS, and 
+metoprolol tartrate 50mg. Clopidogrel was held.
+ 
+Past Medical ","Here is the primary diagnosis in 3 words:
+
+Nasal Fracture Injury","Here is the primary diagnosis in 3 words:
+
+Nasal Fracture Injury",0.9992043972015381,0,Surgical->Chirurgical

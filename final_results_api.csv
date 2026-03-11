@@ -1,0 +1,11 @@
+hadm_id,ground_truth,original_pred,perturbed_pred,changes_count,semantic_similarity
+24120244,ICD Code: I132,Pulmonary Embolism,Hyperkalemia,9,0.99647725
+23271725,ICD Code: 56081,Small Bowel Obstruction,Small Bowel Obstruction,10,0.9991028
+22124877,ICD Code: 64241,Preeclampsia,Preeclampsia,5,0.9972757
+28588783,ICD Code: V5811,Primary CNS Lymphoma,Primary CNS Lymphoma,10,0.9952269
+20269623,ICD Code: K5730,Gastrointestinal Bleeding,Gastrointestinal Bleeding,10,0.9992194
+23639462,ICD Code: 44021,Atrial Fibrillation,Wide Complex Tachycardia,8,0.9985142
+25802941,ICD Code: 5722,Hepatic Encephalopathy,Portosystemic encephalopathy,10,0.99882865
+21758486,ICD Code: 99682,Ischemic cholangiopathy,VRE cholangitis,9,0.9944265
+27184985,ICD Code: 44283,Splenic hematoma with active extravasation and pseudoaneurysms.,Splenic hematoma with active extravasation and pseudoaneurysm.,9,0.9961451
+22473394,ICD Code: 5770,Acute Pancreatitis,Acute Pancreatitis,7,0.99916613
